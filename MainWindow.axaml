@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        MinHeight="600"
+        MinWidth="650"
+        Height="900"
+        Width="1400"
+        WindowStartupLocation="CenterScreen"
+        x:Class="AvaloniaProject.MainWindow"
+        Title="Главное окно">
+
+<Grid Margin="5,5,0,0">
+    <Grid.RowDefinitions>
+        <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="190"/>
+        <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+
+    <StackPanel Grid.Row="0" Grid.Column="0">
+        <TextBlock HorizontalAlignment="Center">Управление данными</TextBlock>
+
+        <Border Margin="0,5,0,5" CornerRadius="6" BorderBrush="Gray" BorderThickness="2"></Border>
+
+            <TextBlock HorizontalAlignment="Left">Введите имя студента:</TextBlock>
+            <TextBox x:Name="tbgr" Margin="0,5,0,5"/>
+            <Button x:Name="btnf1" Click="btnF1" HorizontalAlignment="Center" Width="150" Height="30" Content="Поиск"/>
+
+        <Border Margin="0,10,0,5" CornerRadius="6" BorderBrush="Gray" BorderThickness="2"></Border>
+
+            <TextBlock HorizontalAlignment="Left">Успеваемость:</TextBlock>
+            <TextBlock x:Name="text1" HorizontalAlignment="Left"></TextBlock>
+
+            <TextBlock Margin="0,5,0,0" HorizontalAlignment="Left">Кол-во задолженностей:</TextBlock>
+            <TextBlock x:Name="text2" HorizontalAlignment="Left"></TextBlock>
+
+        <Border Margin="0,10,0,5" CornerRadius="6" BorderBrush="Gray" BorderThickness="2"></Border>
+
+        <Button Margin="0,15,0,0" x:Name="btncl" Click="btnc1" HorizontalAlignment="Left" Width="150" Height="30" Content="Закрыть"/>
+    </StackPanel>
+
+    
+    <Border Margin="5,0,5,5" DockPanel.Dock="Top" Grid.Row="0" Grid.Column="1" CornerRadius="6" BorderBrush="Gray" BorderThickness="3" >
+    <StackPanel Margin="5,5,0,0">
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="btnUp" Click="btnup" Content="Обновить таблицу"></Button>
+            <Button x:Name="btnData1" Click="btnDel" Content="Удалить запись"></Button>
+            <Button x:Name="btnData" Click="btnDataAdd" Content="Добавить запись"></Button>
+        </StackPanel>
+        <DataGrid x:Name="listStudents" x:CompileBindings="False" ColumnWidth="*" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Student.Sname}"/>
+                <DataGridTextColumn Header="Экзамен" Binding="{Binding Exam.Examsname.Examsname1}"/>
+                <DataGridTextColumn Header="Результат" Binding="{Binding Result.Namestatys}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+    </Border>
+</Grid>
+</Window>

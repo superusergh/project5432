@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="300"
+        MinHeight="300"
+        MinWidth="400"
+        Height="300"
+        Width="400"
+        WindowStartupLocation="CenterScreen"
+        x:Class="AvaloniaProject.DataStudentYsp"
+        Title="Добавить данные">
+
+ <Grid Margin="10,5,0,0">
+    <Grid.RowDefinitions>
+        <RowDefinition />
+
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="350"/>
+
+    </Grid.ColumnDefinitions>
+
+    <StackPanel Grid.Row="0" Grid.Column="0">
+
+        <TextBlock>ФИО студента: </TextBlock>
+    
+        <ComboBox x:Name="fiobox" x:CompileBindings="False" SelectedItem="{Binding Student}" DisplayMemberBinding="{Binding Sname}" Width="350"/> 
+   
+        <TextBlock Margin="0,10,0,0" >Экзамен: </TextBlock>
+    
+        <ComboBox  x:Name="exambox" x:CompileBindings="False" SelectedItem="{Binding Exam}" DisplayMemberBinding="{Binding Examsname.Examsname1}" Width="350"/> 
+
+        <TextBlock Margin="0,10,0,0">Результат: </TextBlock>
+   
+        <ComboBox  x:Name="resultbox" x:CompileBindings="False" SelectedItem="{Binding Statysresult}" DisplayMemberBinding="{Binding Namestatys}" Width="350"/>
+
+        <Button Margin="0,30,0,0" x:Name="btnSave" Click="btnSave_Click" Content="Coхранить"/> 
+        <Button HorizontalAlignment="Right" Margin="0,-30,0,0" x:Name="btnCancel" Click="btnCancel_Click" Content="Закрыть"/>
+
+    </StackPanel>
+ </Grid>
+</Window>
